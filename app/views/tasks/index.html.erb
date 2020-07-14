@@ -3,7 +3,8 @@
   <% @tasks.each do |task| %>
     <li>
       <input type="checkbox" name="task">
-      <%= task.title %>
+      <%= link_to task.title, task_path(task) %>
       </li>
   <% end %>
 </ul>
+
