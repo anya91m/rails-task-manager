@@ -1,10 +1,19 @@
 <h1>My Tasks </h1>
-<ul style="list-style: none;">
+
+<ul>
   <% @tasks.each do |task| %>
-    <li>
+    <li class="task" style="text-decoration:none">
       <input type="checkbox" name="task">
       <%= link_to task.title, task_path(task) %>
-      </li>
+        <%= link_to "", delete_path(task), :method => :delete, data: { confirm: "Deleting #{task.title}" }, class: "fa fa-trash-o"%>
+    </li>
   <% end %>
 </ul>
+
+<hr>
+
+<div class="link">
+  + <%= link_to "Add a new task", new_path %>
+</div>
+
 
